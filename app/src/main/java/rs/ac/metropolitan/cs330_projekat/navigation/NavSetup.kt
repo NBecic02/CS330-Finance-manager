@@ -31,8 +31,6 @@ fun NavSetup(navController: NavHostController) {
         composable(route = NavigationRoutes.ExpenseDetails.route) { navBackStackEntry ->
             val elementId = navBackStackEntry.arguments?.getString("elementId")
             if (elementId != null) {
-                println("EXPENSE DETAILS")
-                println(elementId)
                 ExpenseDetails(vm, elementId)
             }else{
                 Toast.makeText(navController.context, "Error, elementId is required!", Toast.LENGTH_SHORT).show()
@@ -41,8 +39,6 @@ fun NavSetup(navController: NavHostController) {
         composable(route = NavigationRoutes.IncomeDetails.route) { navBackStackEntry ->
             val elementId = navBackStackEntry.arguments?.getString("elementId")
             if (elementId != null) {
-                println("INCOME DETAILS")
-                println(elementId)
                 IncomeDetails(vm, elementId)
             }else{
                 Toast.makeText(navController.context, "Error, elementId is required!", Toast.LENGTH_SHORT).show()
