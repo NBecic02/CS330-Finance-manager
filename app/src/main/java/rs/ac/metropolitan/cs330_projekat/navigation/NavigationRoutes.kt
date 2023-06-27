@@ -5,10 +5,10 @@ sealed class NavigationRoutes(val route: String) {
     object Incomes: NavigationRoutes(route = "incomes")
     object NewExpense : NavigationRoutes(route = "new")
     object NewIncome : NavigationRoutes(route = "new")
-    object ExpenseDetails: NavigationRoutes(route = "detail/{elementId}"){
-        fun createRoute(elementId: String) = "detail/$elementId"
+    object ExpenseDetails: NavigationRoutes(route = "expenseDetail/{elementId}"){
+        fun createRoute(elementId: String) = "expenseDetail/$elementId"
     }
-    object IncomeDetails: NavigationRoutes(route = "detail/{elementId}"){
-        fun createRoute(elementId: String) = "detail/$elementId"
+    object IncomeDetails: NavigationRoutes(route = "incomeDetail/{elementId}"){
+        fun createRoute(elementId: String) = "incomeDetail/$elementId"
     }
 }

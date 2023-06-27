@@ -19,7 +19,7 @@ import rs.ac.metropolitan.cs330_projekat.ui.common.ViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ExpensesHomeScreen(vm: ViewModel = viewModel(), paddingValues: PaddingValues) {
+fun ExpensesHomeScreen(vm: ViewModel = viewModel()) {
     val launcher = rememberLauncherForActivityResult(
         ActivityResultContracts.RequestPermission()
     ) { isGranted ->
@@ -35,7 +35,7 @@ fun ExpensesHomeScreen(vm: ViewModel = viewModel(), paddingValues: PaddingValues
                     title = {
                         Row(
                             verticalAlignment = Alignment.CenterVertically,
-                            horizontalArrangement = Arrangement.Center,
+                            horizontalArrangement = Arrangement.SpaceBetween,
                             modifier = Modifier.fillMaxWidth()
                         ) {
                             Button(onClick = {
@@ -43,12 +43,12 @@ fun ExpensesHomeScreen(vm: ViewModel = viewModel(), paddingValues: PaddingValues
                             }, colors = ButtonDefaults.buttonColors(Color.Transparent)
 
                                 ) {
-                                Text(text = "Expenses", color = Color.Black, fontSize = 5.em)
+                                Text(text = "Expenses", color = Color.Black, fontSize = 7.em)
                             }
                             Button(onClick = {
                                 vm.navigateToIncomes()
                             }, colors = ButtonDefaults.buttonColors(Color.Transparent)) {
-                                Text(text = "Incomes", color = Color.Black, fontSize = 5.em)
+                                Text(text = "Incomes", color = Color.Black, fontSize = 7.em)
                             }
                         }
                     }

@@ -44,20 +44,25 @@ fun ExpenseCardView(expense: Expense, onSelected: (String) -> Unit) {
     ) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.Center,
-            modifier = Modifier.padding(8.dp)
+            horizontalArrangement = Arrangement.SpaceBetween,
+            modifier = Modifier.fillMaxWidth()
         ) {
             Text(
                 text = expense.shop,
-                fontSize = 18.sp
+                fontSize = 20.sp,
+                modifier = Modifier.padding(10.dp)
             )
             Text(
-                text = "-${expense.price} RSD", color = Color.Red,
-                modifier = Modifier.padding(4.dp)
+                text = "-${expense.price} RSD",
+                color = Color.Red,
+                fontSize = 20.sp,
+                modifier = Modifier.padding(10.dp)
             )
             Text(
-                text = expense.date, color = Color.Gray,
-                modifier = Modifier.padding(4.dp)
+                text = expense.date,
+                color = Color.Gray,
+                fontSize = 20.sp,
+                modifier = Modifier.padding(10.dp)
             )
         }
     }

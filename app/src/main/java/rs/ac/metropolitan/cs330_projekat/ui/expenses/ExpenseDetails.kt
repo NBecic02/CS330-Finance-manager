@@ -16,7 +16,7 @@ import rs.ac.metropolitan.cs330_projekat.ui.common.ViewModel
 
 
 @Composable
-fun ExpenseDetails(vm: ViewModel, elementId: String, paddingValues: PaddingValues) {
+fun ExpenseDetails(vm: ViewModel, elementId: String) {
     ExpenseBasicData(
         expense = vm.getExpense(Integer.parseInt(elementId)),
         goBack = { vm.goBack() },
@@ -74,7 +74,7 @@ fun ExpenseBasicData(expense: Expense?, vm: ViewModel, goBack: () -> Unit) {
                     modifier = Modifier.padding(4.dp)
                 )
                 Text(
-                    text = "Price: ${it.price} RSD", color = Color.Red,
+                    text = "Price: ${it.price} RSD", color = Color.Gray,
                     modifier = Modifier.padding(4.dp)
                 )
                 Text(

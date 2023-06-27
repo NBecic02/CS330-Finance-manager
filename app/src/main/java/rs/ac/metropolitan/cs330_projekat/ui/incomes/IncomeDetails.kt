@@ -16,7 +16,7 @@ import rs.ac.metropolitan.cs330_projekat.ui.common.ViewModel
 
 
 @Composable
-fun IncomeDetails(vm: ViewModel, elementId: String, paddingValues: PaddingValues) {
+fun IncomeDetails(vm: ViewModel, elementId: String) {
     IncomeBasicData(
         income = vm.getIncomes(Integer.parseInt(elementId)),
         goBack = { vm.goBack() },
@@ -74,7 +74,7 @@ fun IncomeBasicData(income: Income?, vm: ViewModel, goBack: () -> Unit) {
                     modifier = Modifier.padding(4.dp)
                 )
                 Text(
-                    text = "Earning: ${it.earning} RSD", color = Color.Green,
+                    text = "Earning: ${it.earning} RSD", color = Color.Gray,
                     modifier = Modifier.padding(4.dp)
                 )
                 Text(

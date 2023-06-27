@@ -24,7 +24,9 @@ fun IncomeListPage(vm: ViewModel, paddingValues: PaddingValues) {
     LaunchedEffect(vm.loadIncome()) {
     }
 
-    LazyColumn(modifier = Modifier.padding(paddingValues).fillMaxWidth()) {
+    LazyColumn(modifier = Modifier
+        .padding(paddingValues)
+        .fillMaxWidth()) {
         incomes.value?.let {
             items(it) { income ->
                 IncomeCardView(income) {
@@ -45,20 +47,25 @@ fun IncomeCardView(income: Income, onSelected: (String) -> Unit) {
     ) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.Center,
-            modifier = Modifier.padding(8.dp)
+            horizontalArrangement = Arrangement.SpaceBetween,
+            modifier = Modifier.fillMaxWidth()
         ) {
             Text(
                 text = income.source,
-                fontSize = 18.sp
+                fontSize = 18.sp,
+                modifier = Modifier.padding(15.dp)
             )
             Text(
-                text = "+${income.earning} RSD", color = Color.Green,
-                modifier = Modifier.padding(4.dp)
+                text = "+${income.earning} RSD",
+                color = Color.Green,
+                fontSize = 20.sp,
+                modifier = Modifier.padding(10.dp)
             )
             Text(
-                text = income.date, color = Color.Gray,
-                modifier = Modifier.padding(4.dp)
+                text = income.date,
+                color = Color.Gray,
+                fontSize = 20.sp,
+                modifier = Modifier.padding(10.dp)
             )
         }
     }
